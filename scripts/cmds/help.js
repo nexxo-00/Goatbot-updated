@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔═══════════╗\n       ⛩️ Yae Miko ⛩️\n╚═══════════╝`; // replace with your name 
+      msg += `     NEXXO AI ☠️ \n`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -46,11 +46,11 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n╭───────────\n│ 『  ${category.toUpperCase()}  』`;
+          msg += `\n╭───────────\n│ [  ${category.toUpperCase()}  ]`;
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 3).map((item) => `⛩️${item}`);
+            const cmds = names.slice(i, i + 3).map((item) => `⭓${item}`);
             msg += `\n│ ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
 
@@ -59,9 +59,9 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `\nCurrently,the Yae miko bot has ${totalCommands} Commands that can be used\n`;
+      msg += `\nCurrently,the NEXXO bot has ${totalCommands} Commands that can be used\n`;
       msg += `Just type ${prefix} help cmdname to view the details of that Command\n`;
-      msg += `[ 2nd Ruler of Inazuma ]`; // its not decoy so change it if you want 
+      msg += ``; // its not decoy so change it if you want 
 
       await message.reply(msg);
     } else {
@@ -80,7 +80,7 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `╭── NAME ────⭓
+        const response = `── NAME ────⭓
   │ ${configCommand.name}
   ├── INFO
   │ Description: ${longDescription}
@@ -95,7 +95,7 @@ module.exports = {
   ├── Notes
   │ The content inside <XXXXX> can be changed
   │ The content inside [a|b|c] is a or b or c
-  ╰━━━━━━━❖`;
+  ━━━━━━━❖`;
 
         await message.reply(response);
       }
