@@ -6,7 +6,7 @@ module.exports = {
   config: {
     name: "info",
     version: "1.0",
-    author: "deepam",
+    author: "NEXXO",
     role: 0,
     cooldown: 5,
     shortDescription: {
@@ -25,7 +25,7 @@ module.exports = {
   },
 
   onStart: async function ({ message, prefix }) {
-    const botPrefix = prefix . // Use the provided bot prefix
+    const botPrefix = "prefix ." // Use the provided bot prefix
     const authorName = "NEXXO";
     const authorFB = "https://www.facebook.com/nexo.6T9?mibextid=ZbWKwL";
 
